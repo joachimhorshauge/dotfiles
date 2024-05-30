@@ -1,0 +1,91 @@
+[user]
+    name = Joachim Horshauge
+    email = jh.hors@gmail.com
+
+[core]
+    editor = vim 
+    autocrlf = input
+    excludesfile = ~/.gitignore_global
+
+[alias]
+    # Common aliases
+    co = checkout
+    br = branch
+    ci = commit
+    st = status
+    last = log -1 HEAD
+    type = cat-file -t
+    dump = cat-file -p
+
+    # Enhanced log aliases
+    lg = log --graph --pretty=format:'%C(yellow)%h%Creset -%C(cyan)%d%Creset %s %C(white)- %an, %ar%Creset'
+    ll = log --oneline --decorate
+
+    # Stash aliases
+    save = !git add -A && git stash
+    pop = stash pop
+
+    # Push with current branch
+    pu = push -u origin HEAD
+
+[push]
+    default = simple
+
+[fetch]
+    prune = true
+
+[merge]
+    ff = only
+
+[diff]
+    tool = default-difftool  # Set your preferred diff tool
+
+[core]
+    pager = less -r
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    features = side-by-side line-numbers decorations
+    whitespace-error-style = 22 reverse
+
+[delta "decorations"]
+    commit-decoration-style = bold yellow box ul
+    file-style = bold yellow ul
+    hunk-header-decoration-style = blue box ul
+    hunk-header-file-style = red
+    hunk-header-line-number-style = "#067a00"
+    hunk-header-style = file line-number-style
+
+[credential]
+    helper = osxkeychain  # macOS specific
+
+[color]
+    ui = true
+
+[color "diff"]
+    meta = yellow
+    frag = magenta
+    old = red
+    new = green
+
+[color "branch"]
+    current = yellow reverse
+    local = yellow
+    remote = green
+
+[color "status"]
+    added = green
+    changed = yellow
+    untracked = red
+
+[rerere]
+    enabled = true
+
+[pull]
+    rebase = true
+
+[rebase]
+    autosquash = true
+
