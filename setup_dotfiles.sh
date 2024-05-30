@@ -37,3 +37,7 @@ done
 
 echo "Dotfiles setup complete."
 
+# Installing packages with brew bundle
+echo "Installing packages with brew bundle."
+
+brew bundle --file="$HOME/dotfiles/brew/.Brewfile" --no-lock
