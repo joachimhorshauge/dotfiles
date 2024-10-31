@@ -26,6 +26,9 @@
         pkgs.tmux
         pkgs.alacritty
         pkgs.obsidian
+        pkgs.ripgrep
+        pkgs.tree
+        pkgs.bat
       ];
 
       homebrew = {
