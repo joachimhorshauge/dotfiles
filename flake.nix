@@ -12,6 +12,10 @@
   let
     configuration = { pkgs, config, ... }: {
 	nixpkgs.config.allowUnfree = true;
+	security.pam.enableSudoTouchIdAuth = true;
+	nix.extraOptions = ''
+  	  extra-platforms = x86_64-darwin aarch64-darwin
+	'';
 
       # List packages installed in system profile. To search by name, run:
       # $ nix-env -qaP | grep wget
@@ -33,6 +37,7 @@
 	  casks = [
 	    "zen-browser"
 	    "fork"
+	    "raycast"
 	  ];
 	  onActivation.cleanup = "zap";
 	};
@@ -60,6 +65,27 @@ in
     ${pkgs.mkalias}/bin/mkalias "$src" "/Applications/Nix Apps/$app_name"
   done
       '';
+
+      system.defaults = {
+        dock.autohide = true;
+	dock.persistent-apps = [
+	  "${pkgs.alacritty}/Applications/Alacritty.app"
+	  "/Applications/Zen Browser.app"
+	  "${pkgs.obsidian}/Applications/Obsidian.app"
+	  "/System/Applications/Mail.app"
+	  "/System/Applications/Calendar.app"
+	  ];
+	dock.mru-spaces = false;
+	finder.AppleShowAllExtensions = true;
+	finder.FXPreferredViewStyle = "clmv";
+	loginwindow.GuestEnabled = false;
+	loginwindow.LoginwindowText = "Joachim Horshauge - Personal";
+  	screencapture.location = "~/Pictures/screenshots";
+  	screensaver.askForPasswordDelay = 10;
+	NSGlobalDomain.AppleICUForce24HourTime = true;
+	NSGlobalDomain.AppleInterfaceStyle = "Dark";
+	NSGlobalDomain.KeyRepeat = 2;
+      };
 
       # Auto upgrade nix package and the daemon service.
       services.nix-daemon.enable = true;
