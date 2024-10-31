@@ -19,17 +19,21 @@
       '';
 
       # System packages
-      environment.systemPackages = [
-        pkgs.mkalias
-        pkgs.neovim
-        pkgs.git
-        pkgs.tmux
-        pkgs.alacritty
-        pkgs.obsidian
-        pkgs.ripgrep
-        pkgs.tree
-        pkgs.bat
+      environment.systemPackages = with pkgs; [
+        mkalias
+        neovim
+        git
+        tmux
+        alacritty
+        obsidian
+        ripgrep
+        tree
+        bat
+        nodejs  # Includes npm
+        go      # Go language support
+        dotnet-sdk
       ];
+
 
       homebrew = {
         enable = true;

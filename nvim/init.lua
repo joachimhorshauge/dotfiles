@@ -1,3 +1,3 @@
 require("joachim.settings")
-require("joachim.lazy")
 require("joachim.maps")
+require("joachim.lazy")

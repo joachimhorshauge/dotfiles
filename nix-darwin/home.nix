@@ -52,6 +52,7 @@
     ".zshrc".source = ~/dotfiles/zshrc/.zshrc;
     ".config/zellij".source = ~/dotfiles/zellij;
     ".config/nvim".source = ~/dotfiles/nvim;
+    ".config/alacritty".source = ~/dotfiles/alacritty;
     ".config/nix-darwin".source = ~/dotfiles/nix-darwin;
   };
 
