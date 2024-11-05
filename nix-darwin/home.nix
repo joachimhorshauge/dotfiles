@@ -53,7 +53,13 @@
     ".config/zellij".source = ~/dotfiles/zellij;
     ".config/nvim".source = ~/dotfiles/nvim;
     ".config/alacritty".source = ~/dotfiles/alacritty;
+    ".config/starship.toml".source = ~/dotfiles/starship/starship.toml;
     ".config/nix-darwin".source = ~/dotfiles/nix-darwin;
+    ".config/tmux".source = ~/dotfiles/tmux;
+    ".config/sketchybar".source = ~/dotfiles/sketchybar;
+    ".config/skhd".source = ~/dotfiles/skhd;
+    ".config/yabai".source = ~/dotfiles/yabai;
+    ".config/borders".source = ~/dotfiles/borders;
   };
 
   # Home Manager can also manage your environment variables through

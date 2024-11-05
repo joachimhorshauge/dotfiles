@@ -1,0 +1,55 @@
+#!/bin/bash
+
+source "./colors.sh" # Loads all defined colors
+CONFIG_DIR="~/.config/sketchybar"
+PLUGIN_DIR="$CONFIG_DIR/plugins"
+ITEM_DIR="$CONFIG_DIR/items"
+
+##### Bar Appearance #####
+# Configuring the general appearance of the bar.
+sketchybar --bar height=37        \
+                 blur_radius=30   \
+                 position=top     \
+                 sticky=off       \
+                 padding_left=10  \
+                 padding_right=10 \
+                 color=$BAR_COLOR
+
+##### Changing Defaults #####
+sketchybar --default icon.font="Hack Nerd Font:Bold:17.0"  \
+                     icon.color=$WHITE                 \
+                     label.font="Hack Nerd Font:Bold:14.0" \
+                     label.color=$WHITE                \
+                     background.color=$ITEM_BG_COLOR       \
+                     background.corner_radius=5            \
+                     background.height=24                  \
+                     padding_left=5                    \
+                     padding_right=5                   \
+                     label.padding_left=4              \
+                     label.padding_right=10             \
+                     icon.padding_left=10               \
+                     icon.padding_right=4
+
+# --- Right Side Items ---
+sketchybar --add item calendar right \
+           --set calendar icon=􀧞  \
+                          update_freq=30 \
+                          script="$PLUGIN_DIR/calendar.sh"
+
+sketchybar --add item volume right \
+           --set volume script="$PLUGIN_DIR/volume.sh" \
+           --subscribe volume volume_change \
+
+sketchybar --add item battery right \
+           --set battery update_freq=120 \
+                         script="$PLUGIN_DIR/battery.sh" \
+           --subscribe battery system_woke power_source_change
+
+sketchybar --add item cpu right \
+           --set cpu  update_freq=2 \
+                      icon=􀧓  \
+                      script="$PLUGIN_DIR/cpu.sh"
+
+##### Finalizing Setup #####
+
+sketchybar --update

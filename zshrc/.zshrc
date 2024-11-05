@@ -1,5 +1,5 @@
 # Go
-export GOPATH='/Users/omerxx/go'
+export GOPATH='/Users/joachimhorshauge/go'
 
 # Nix
 export NIX_CONF_DIR=$HOME/.config/nix
@@ -24,3 +24,8 @@ alias ga='git add -p'
 alias gcoall='git checkout -- .'
 alias gr='git remote'
 alias gre='git reset'
+
+
+# Starship
+eval "$(starship init zsh)"
+export STARSHIP_CONFIG=~/.config/starship.toml

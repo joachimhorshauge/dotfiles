@@ -28,22 +28,34 @@
         obsidian
         ripgrep
         tree
+        starship
         bat
         nodejs  # Includes npm
         go      # Go language support
         dotnet-sdk
-      ];
+        spotify
+        rustup
+        gradle
+        jankyborders 
+        yabai
+        skhd
+        jq
+        lua54Packages.lua
+        sketchybar
+        vlc-bin-universal
+        jetbrains.idea-ultimate
+        ];
 
 
       homebrew = {
         enable = true;
         brews = [ "mas" ];
-        casks = [ "zen-browser" "fork" "raycast" "wireshark" ];
+        casks = [ "zen-browser" "fork" "raycast" "wireshark" "keymapp" "qbittorrent" "mathpix-snipping-tool"];
         onActivation.cleanup = "zap";
       };
 
       fonts.packages = [
-        (pkgs.nerdfonts.override { fonts = ["JetBrainsMono"]; })
+        (pkgs.nerdfonts.override { fonts = ["JetBrainsMono" "Hack" ]; })
       ];
 
       system.activationScripts.applications.text = let
@@ -75,6 +87,7 @@
           "/System/Applications/Calendar.app"
         ];
         dock.mru-spaces = false;
+        dock.orientation = "left";
         finder.AppleShowAllExtensions = true;
         finder.FXPreferredViewStyle = "clmv";
         loginwindow.GuestEnabled = false;
@@ -84,10 +97,33 @@
         NSGlobalDomain.AppleICUForce24HourTime = true;
         NSGlobalDomain.AppleInterfaceStyle = "Dark";
         NSGlobalDomain.KeyRepeat = 2;
-        NSGlobalDomain._HIHideMenuBar = true;
         trackpad.Clicking = true;
       };
 
+      services.jankyborders = {
+        enable = true;
+        package = pkgs.jankyborders;
+        width = 5.0;
+        active_color = "gradient(top_left=0xffDDB6F2,bottom_right=0xff96CDFB)";
+        inactive_color = "gradient(top_right=0x9992B3F5,bottom_left=0x9992B3F5)";
+        hidpi = true;
+        ax_focus = true;
+      };
+      services.skhd = {
+        enable = true;
+        package = pkgs.skhd;
+      };
+      services.sketchybar = {
+        enable = true;
+        package = pkgs.sketchybar;
+        extraPackages = [
+          pkgs.jq
+        ];
+      };
+      services.yabai = {
+        enable = true;
+        enableScriptingAddition = true;
+      };
       services.nix-daemon.enable = true;
       nix.settings.experimental-features = "nix-command flakes";
       programs.zsh.enable = true;
