@@ -25,6 +25,8 @@ alias gcoall='git checkout -- .'
 alias gr='git remote'
 alias gre='git reset'
 
+alias reload-nix='darwin-rebuild switch --flake ~/dotfiles/nix-darwin/.#personal && home-manager switch --experimental-features flakes && sudo chmod +x ~/.config/sketchybar/sketchybarrc'
+
 
 # Starship
 eval "$(starship init zsh)"

@@ -7,8 +7,11 @@ padding.y = 10
 
 opacity = 0.7
 blur = true
+decorations = "None"
 
 option_as_alt = "Both"
+
+
 
 [font]
 normal.family = "JetBrainsMono Nerd Font"
