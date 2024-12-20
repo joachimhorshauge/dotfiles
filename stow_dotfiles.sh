@@ -1,15 +1,3 @@
-
-
-#!/bin/bash
-
-# Directory containing your dotfiles folders
-DOTFILES_DIR=$(pwd)
-
-# Folders to exclude
-EXCLUDED_FOLDERS=("nix-darwin" ".git")
-
-
-
 #!/bin/bash
 
 # Directory containing your dotfiles folders
@@ -28,6 +16,18 @@ sync_dotfiles() {
     if [ ! -d "$folder" ]; then
         echo "Error: Folder '$folder' does not exist."
         return 1
+    fi
+
+     # Special handling for tmux folder
+    if [ "$folder" == "tmux" ]; then
+        echo "Checking for Tmux Plugin Manager (TPM)..."
+        local tpm_path="$HOME/.tmux/plugins/tpm"
+        if [ ! -d "$tpm_path" ]; then
+            echo "TPM not found. Cloning from GitHub..."
+            git clone https://github.com/tmux-plugins/tpm "$tpm_path"
+        else
+            echo "TPM already installed at $tpm_path."
+        fi
     fi
 
     # Dry-run to detect potential conflicts
