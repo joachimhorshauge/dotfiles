@@ -1,9 +1,13 @@
 # Go
 export GOPATH='/Users/joachimhorshauge/go'
+export PATH="$PATH:$HOME/go/bin"
 
 # Nix
 export NIX_CONF_DIR=$HOME/.config/nix
 export PATH=/run/current-system/sw/bin:$PATH
+
+export EDITOR=nvim
+
 
 alias la=tree
 alias cat=bat
@@ -25,9 +29,17 @@ alias gcoall='git checkout -- .'
 alias gr='git remote'
 alias gre='git reset'
 
-alias reload-nix='darwin-rebuild switch --flake ~/dotfiles/nix-darwin/.#personal && home-manager switch --experimental-features flakes && sudo chmod +x ~/.config/sketchybar/sketchybarrc'
+# Nix
+alias reload-nix='darwin-rebuild switch --flake ~/dotfiles/nix-darwin/.#personal && home-manager switch --experimental-features flakes && sudo chmod +x ~/.config/sketchybar/sketchybarrc && sudo chmod +x ~/.config/yabai/yabairc && sudo chmod +x ~/.config/skhd/skhdrc && sudo chmod +x ~/.config/nvim'
 
+# NeoVim
+alias vim="nvim"
+
+## LSP
+export PATH="/opt/homebrew/Cellar/lua-language-server/3.13.4/bin:$PATH"
+export PATH="/opt/homebrew/Cellar/gopls/0.17.0:$PATH"
 
 # Starship
 eval "$(starship init zsh)"
 export STARSHIP_CONFIG=~/.config/starship.toml
+

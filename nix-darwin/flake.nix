@@ -9,7 +9,7 @@
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
   };
 
-  outputs = inputs@{ self, nix-darwin, nixpkgs, nix-homebrew, home-manager }:
+  outputs = inputs@{ self, nix-darwin, nixpkgs, nix-homebrew}:
   let
     configuration = { pkgs, config, ... }: {
       nixpkgs.config.allowUnfree = true;
@@ -32,7 +32,7 @@
         bat
         nodejs  # Includes npm
         go      # Go language support
-        dotnet-sdk
+        dotnet-sdk_8
         spotify
         rustup
         gradle
@@ -44,13 +44,26 @@
         sketchybar
         vlc-bin-universal
         jetbrains.idea-ultimate
+        jetbrains.rider
+        jetbrains.clion
+        discord
+        teams
+        yazi
+        web-ext
+        audacity
+        postgresql
+        zathura
+        tectonic
+        docker-compose
+        protonmail-desktop
+	stow
         ];
 
 
       homebrew = {
         enable = true;
-        brews = [ "mas" ];
-        casks = [ "zen-browser" "fork" "raycast" "wireshark" "keymapp" "qbittorrent" "mathpix-snipping-tool"];
+        brews = [ "mas" "lua-language-server" "gopls"];
+        casks = [ "zen-browser" "fork" "raycast" "wireshark" "keymapp" "qbittorrent" "mathpix-snipping-tool" "obs" "bfxr" "krita" "blender" "unity-hub" "steam" "docker" "pgadmin4"];
         onActivation.cleanup = "zap";
       };
 
@@ -87,7 +100,7 @@
           "/System/Applications/Calendar.app"
         ];
         dock.mru-spaces = false;
-        dock.orientation = "left";
+        dock.orientation = "right";
         finder.AppleShowAllExtensions = true;
         finder.FXPreferredViewStyle = "clmv";
         loginwindow.GuestEnabled = false;
