@@ -1,7 +1,5 @@
 {
   description = "Personal Darwin system flake";
-
-  
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     nix-darwin.url = "github:LnL7/nix-darwin";
@@ -24,7 +22,6 @@
         neovim
         git
         tmux
-        alacritty
         obsidian
         ripgrep
         tree
@@ -52,18 +49,18 @@
         web-ext
         audacity
         postgresql
-        zathura
-        tectonic
         docker-compose
         protonmail-desktop
 	stow
+	texliveFull
+	zathura
         ];
 
 
       homebrew = {
         enable = true;
-        brews = [ "mas" "lua-language-server" "gopls"];
-        casks = [ "zen-browser" "fork" "raycast" "wireshark" "keymapp" "qbittorrent" "mathpix-snipping-tool" "obs" "bfxr" "krita" "blender" "unity-hub" "steam" "docker" "pgadmin4"];
+        brews = [ "mas" "lua-language-server" "gopls" "dbus" "fzf" "pyright"];
+        casks = [ "zen-browser" "fork" "raycast" "wireshark" "keymapp" "qbittorrent" "mathpix-snipping-tool" "obs" "bfxr" "krita" "blender" "unity-hub" "steam" "docker" "pgadmin4" "ghostty"];
         onActivation.cleanup = "zap";
       };
 

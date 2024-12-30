@@ -1,0 +1,16 @@
+# Cursor
+cursor-opacity = 0.9
+
+# Background
+background-opacity = 0.8
+background-blur-radius = 20
+
+# Title bar
+macos-titlebar-style = hidden
+
+# Padding
+window-padding-x = 10
+window-padding-y = 10
+
+# Theme
+theme = tokyonight

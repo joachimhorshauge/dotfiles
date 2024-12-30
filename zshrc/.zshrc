@@ -6,7 +6,14 @@ export PATH="$PATH:$HOME/go/bin"
 export NIX_CONF_DIR=$HOME/.config/nix
 export PATH=/run/current-system/sw/bin:$PATH
 
+# Homebrew
+export PATH=/opt/homebrew/bin:$PATH
+
+
 export EDITOR=nvim
+
+# fzf
+source <(fzf --zsh)
 
 
 alias la=tree
@@ -30,16 +37,22 @@ alias gr='git remote'
 alias gre='git reset'
 
 # Nix
-alias reload-nix='darwin-rebuild switch --flake ~/dotfiles/nix-darwin/.#personal && home-manager switch --experimental-features flakes && sudo chmod +x ~/.config/sketchybar/sketchybarrc && sudo chmod +x ~/.config/yabai/yabairc && sudo chmod +x ~/.config/skhd/skhdrc && sudo chmod +x ~/.config/nvim'
+alias reload-nix='darwin-rebuild switch --flake ~/dotfiles/nix-darwin/.#personal' 
 
 # NeoVim
 alias vim="nvim"
 
+# Zathura
+export DBUS_SESSION_BUS_ADDRESS="unix:path=$DBUS_LAUNCHD_SESSION_BUS_SOCKET"
+
 ## LSP
 export PATH="/opt/homebrew/Cellar/lua-language-server/3.13.4/bin:$PATH"
 export PATH="/opt/homebrew/Cellar/gopls/0.17.0:$PATH"
+export PATH="/opt/homebrew/Cellar/pyright/1.1.391/bin/pyright:$PATH"
 
 # Starship
 eval "$(starship init zsh)"
 export STARSHIP_CONFIG=~/.config/starship.toml
 
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
