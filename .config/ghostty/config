@@ -1,0 +1,8 @@
+font-family = "JetBrainsMono Nerd Font Mono"
+
+theme = "Kanagawa Wave"
+
+fullscreen = true
+
+window-padding-x = 8,8
+window-padding-y = 8,8
