@@ -14,3 +14,6 @@ cask "raycast"
 cask "rider"
 cask "spotify"
 cask "zen-browser"
+cask 'discord'
+
+cask "font-jetbrains-mono-nerd-font"
