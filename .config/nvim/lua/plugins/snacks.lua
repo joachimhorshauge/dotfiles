@@ -4,12 +4,21 @@ return {
   lazy = false,
   ---@type snacks.Config
   opts = {
-    dashboard = { 
+    dashboard = {
       enabled = true ,
       example = "files",
     },
-    statuscolumn = { enabled = true},
-    picker = { enabled = true},
+    input = {
+      enabled = true,
+      backdrop = false,
+    },
+    picker = {
+      enabled = true,
+      preset = "telescope",
+      layout = {
+        backdrop = false
+      },
+    },
   },
   keys = {
     { "<leader><space>", function() Snacks.picker.smart() end, desc = "Smart Find Files" },
@@ -20,6 +29,5 @@ return {
     { "<leader>fc", function() Snacks.picker.files({ cwd = vim.fn.stdpath("config") }) end, desc = "Find Config File" },
     { "<leader>fp", function() Snacks.picker.projects() end, desc = "Projects" },
     { "<leader>fr", function() Snacks.picker.recent() end, desc = "Recent" },
-    { "<leader>gs", function() Snacks.picker.git_status() end, desc = "Git Status" },
   }
-} 
+}
