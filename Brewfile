@@ -8,6 +8,8 @@ brew "ripgrep"
 brew "fzf"
 brew "npm"
 brew "go"
+brew "zsh-autosuggestions"
+brew "zsh-syntax-highlighting"
 
 cask "fork"
 cask "ghostty"
