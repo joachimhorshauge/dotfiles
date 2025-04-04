@@ -24,3 +24,4 @@ export FZF_TMUX_OPTS=" -p90%,70% "
 
 # NOTE: Aliases
 alias lg="lazygit"
+alias ls="eza --no-filesize --long --color=always --icons=always --no-user"
