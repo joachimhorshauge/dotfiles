@@ -21,6 +21,9 @@ export FZF_ALT_C_OPTS="--preview 'eza --icons=always --tree --color=always {} | 
 # fzf preview for tmux
 export FZF_TMUX_OPTS=" -p90%,70% "
 
+# NOTE: Starship
+eval "$(starship init zsh)"
+
 
 # NOTE: Aliases
 alias lg="lazygit"

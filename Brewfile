@@ -14,6 +14,7 @@ brew "bat"
 brew "fd"
 brew "zoxide"
 brew "eza"
+brew "starship"
 
 cask "fork"
 cask "ghostty"
