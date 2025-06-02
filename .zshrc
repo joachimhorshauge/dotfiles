@@ -24,7 +24,12 @@ export FZF_TMUX_OPTS=" -p90%,70% "
 # NOTE: Starship
 eval "$(starship init zsh)"
 
+# NOTE: Golang
+export GOPATH=$HOME/go
+export PATH=$GOPATH/bin:$PATH
+export PATH=$PATH:$(go env GOPATH)/bin
 
 # NOTE: Aliases
 alias lg="lazygit"
 alias ls="eza --no-filesize --long --color=always --icons=always --no-user"
+export PATH="/Library/TeX/texbin:$PATH"
