@@ -1,0 +1,11 @@
+# Font
+font-family = "DejaVuSansMono"
+font-size = 14
+
+# Tabs and Decoration
+gtk-tabs-location = hidden
+window-decoration = false
+
+# Clipboard
+clipboard-read = allow
+clipboard-paste-protection = false
